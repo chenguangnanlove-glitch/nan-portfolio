@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+<title id="title">火星骑行者 · 鹈鹕单车动画</title>
+<desc id="desc">一只戴着太空头盔的鹈鹕，骑着青绿色自行车穿过火星红色沙丘。轮胎、脚踏、双腿、围巾和飞扬的沙尘持续循环运动。</desc>
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#090d23"/><stop offset=".52" stop-color="#3c2444"/><stop offset="1" stop-color="#bd6049"/></linearGradient>
+ <radialGradient id="haze"><stop stop-color="#ffc493" stop-opacity=".67"/><stop offset=".4" stop-color="#ff9e80" stop-opacity=".19"/><stop offset="1" stop-color="#ff9e80" stop-opacity="0"/></radialGradient>
+ <linearGradient id="sand" x2="0" y2="1"><stop stop-color="#f4a067"/><stop offset=".52" stop-color="#a84f3d"/><stop offset="1" stop-color="#582c36"/></linearGradient>
+ <linearGradient id="frame" x2="1" y2="1"><stop stop-color="#a1ffeb"/><stop offset=".48" stop-color="#39d8d3"/><stop offset="1" stop-color="#188bba"/></linearGradient>
+ <linearGradient id="bird" x2="1" y2="1"><stop stop-color="#fffdf0"/><stop offset=".55" stop-color="#f0e0c5"/><stop offset="1" stop-color="#bdb4a5"/></linearGradient>
+ <linearGradient id="wing" x2="1" y2="1"><stop stop-color="#f1e3c9"/><stop offset="1" stop-color="#c1a789"/></linearGradient>
+ <linearGradient id="bill" x2="0" y2="1"><stop stop-color="#ffdf7d"/><stop offset=".6" stop-color="#f5a847"/><stop offset="1" stop-color="#b85a3d"/></linearGradient>
+ <linearGradient id="pouch" x2="0" y2="1"><stop stop-color="#f7bf8d"/><stop offset="1" stop-color="#d16e72"/></linearGradient>
+ <linearGradient id="helmet" x2="1" y2="1"><stop stop-color="#d5fbff" stop-opacity=".43"/><stop offset=".6" stop-color="#7fd9f5" stop-opacity=".16"/><stop offset="1" stop-color="#8ed2eb" stop-opacity=".5"/></linearGradient>
+ <linearGradient id="rim" x2="0" y2="1"><stop stop-color="#f7ffff"/><stop offset="1" stop-color="#6d9aa5"/></linearGradient>
+ <pattern id="ripples" width="115" height="29" patternUnits="userSpaceOnUse" patternTransform="skewX(-22)"><path d="M0 14q35 -9 70 -3" stroke="#ffd29d" stroke-width="2" opacity=".16" fill="none"/></pattern>
+ <filter id="blur"><feGaussianBlur stdDeviation="16"/></filter>
+ <filter id="shadow" x="-40%" y="-60%" width="180%" height="230%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#17152b" flood-opacity=".45"/></filter>
+ <filter id="light"><feGaussianBlur stdDeviation="6"/></filter>
+ <g id="star"><path d="M0 -4V4M-4 0H4" stroke="#fff7df" stroke-width="1.1" stroke-linecap="round"/><circle r="1.1" fill="white"/></g>
+ <g id="wheel">
+  <circle r="93" fill="#202634" stroke="#101b2b" stroke-width="3"/>
+  <circle r="83" fill="#2c3341" stroke="#566570" stroke-width="2"/>
+  <circle r="75" fill="#13222e" stroke="url(#rim)" stroke-width="5"/>
+  <circle r="68" fill="#243946" stroke="#b5e7df" stroke-width="1.2" opacity=".58"/>
+  <g stroke="#b7d9d6" stroke-width="1.5" opacity=".76">
+   <path d="M0 -73V73 M-73 0H73 M-52 -52L52 52 M-52 52L52 -52 M-28 -67L28 67 M-67 -28L67 28 M28 -67L-28 67 M67 -28L-67 28"/>
+   <circle r="12" fill="#cdece7" stroke="#396776" stroke-width="4"/>
+   <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="1.22s" repeatCount="indefinite"/>
+  </g>
+  <g fill="#677d84" opacity=".75"><rect x="-3" y="-91" width="6" height="7" rx="2"/><rect x="-3" y="84" width="6" height="7" rx="2"/><rect x="84" y="-3" width="7" height="6" rx="2"/><rect x="-91" y="-3" width="7" height="6" rx="2"/></g>
+ </g>
+ <g id="dust"><ellipse rx="19" ry="10" fill="#ffbd86" opacity=".66"/><circle cx="19" cy="-6" r="9" fill="#f7b27e" opacity=".65"/><circle cx="-11" cy="-7" r="7" fill="#ffd7a0" opacity=".55"/></g>
+ <style><![CDATA[
+ .spin{transform-box:fill-box;transform-origin:center;animation:rotate 1.8s linear infinite}
+ .crank{transform-origin:0px 0px;animation:rotate 1.8s linear infinite}
+ .bob{animation:bob 1.8s ease-in-out infinite}
+ .tail{transform-origin:0px 0px;animation:scarf .85s ease-in-out infinite alternate}
+ .dust{animation:dust 2.1s ease-out infinite;transform-box:fill-box;transform-origin:center}
+ .d2{animation-delay:-.7s}.d3{animation-delay:-1.4s}
+ .star{animation:twinkle 2.5s ease-in-out infinite alternate}.s2{animation-delay:-1.2s}
+ .terrainNear{animation:drift 11s linear infinite alternate}
+ .terrainFar{animation:driftFar 19s ease-in-out infinite alternate}
+ .birdLeg{fill:none;stroke:#d48a59;stroke-width:12;stroke-linecap:round;stroke-linejoin:round}
+ .birdLegBack{stroke:#b77856;stroke-width:10}
+ .highlight{fill:none;stroke:#fff;stroke-opacity:.7;stroke-linecap:round}
+ @keyframes rotate{to{transform:rotate(360deg)}}
+ @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+ @keyframes scarf{0%{transform:rotate(-8deg)}100%{transform:rotate(11deg)}}
+ @keyframes dust{0%{transform:translate(0,0) scale(.4);opacity:0}18%{opacity:.8}100%{transform:translate(-170px,-36px) scale(2);opacity:0}}
+ @keyframes twinkle{from{opacity:.2}to{opacity:1}}
+ @keyframes drift{from{transform:translateX(0)}to{transform:translateX(-30px)}}
+ @keyframes driftFar{from{transform:translateX(-12px)}to{transform:translateX(15px)}}
+ @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+ ]]></style>
+</defs>
+<!-- atmospheric backdrop -->
+<rect width="1280" height="720" fill="url(#sky)"/>
+<circle cx="913" cy="207" r="355" fill="url(#haze)"/>
+<circle cx="919" cy="177" r="48" fill="#ffd5a4" opacity=".68" filter="url(#blur)"/>
+<circle cx="919" cy="177" r="34" fill="#ffe0aa"/>
+<circle cx="919" cy="177" r="29" fill="#f8c18c"/><path d="M899 163q12 -12 27 -2M914 193q13 4 22 -7" fill="none" stroke="#cb9b86" stroke-width="4" opacity=".4"/>
+<circle cx="1091" cy="110" r="18" fill="#d8c4c0"/><circle cx="1098" cy="105" r="6" fill="#b5a8ad" opacity=".5"/><circle cx="1041" cy="252" r="10" fill="#d6b7a4"/>
+<g opacity=".8"><use xlink:href="#star" x="75" y="67" class="star"/><use xlink:href="#star" x="180" y="139" class="star s2"/><use xlink:href="#star" x="332" y="74" class="star"/><use xlink:href="#star" x="500" y="128" class="star s2"/><use xlink:href="#star" x="625" y="60" class="star"/><use xlink:href="#star" x="750" y="117" class="star s2"/><use xlink:href="#star" x="1170" y="61" class="star"/><use xlink:href="#star" x="1191" y="202" class="star s2"/><use xlink:href="#star" x="104" y="244" class="star"/><use xlink:href="#star" x="553" y="209" class="star s2"/></g>
+<!-- atmospheric mesas and mountains -->
+<g class="terrainFar"><path d="M-70 428l91 -88 69 49 76 -111 58 77 72 -18 79 95 91 -37 59 -64 76 69 70 -29 96 52 115 -70 72 62 96 -98 105 99v156H-70Z" fill="#673a54" opacity=".62"/><path d="M-70 477q110 -55 232 -25 140 -54 267 -3 107 -75 225 -17 143 -46 256 2 140 -58 340 3v150H-70Z" fill="#a85556" opacity=".57"/></g>
+<path d="M0 487q189 -59 339 -18t329 6q185 -41 340 -15t272 9v251H0Z" fill="#a75349"/>
+<path d="M0 529q124 -53 240 -38 121 24 243 12 153 -35 276 -13 159 25 264 -7 133 -22 257 29v208H0Z" fill="url(#sand)"/>
+<path d="M0 532q248 -33 456 5t427 -1q211 -31 397 10v174H0Z" fill="url(#ripples)"/>
+<g opacity=".56" fill="#693948"><ellipse cx="177" cy="547" rx="45" ry="9"/><ellipse cx="1014" cy="525" rx="40" ry="7"/><ellipse cx="1158" cy="578" rx="61" ry="13"/><ellipse cx="72" cy="622" rx="47" ry="11"/></g>
+<g class="terrainNear"><path d="M-50 654q200 -40 368 -16 164 36 304 5 177 -41 320 -2 175 15 388 -34v113H-50Z" fill="#7e3c42" opacity=".85"/><path d="M-60 691q277 -32 499 -9 199 23 379 -4 194 -30 477 2v40H-60Z" fill="#542f3c" opacity=".75"/></g>
+<!-- rock clusters -->
+<g fill="#733e48" stroke="#dc805c" stroke-opacity=".34" stroke-width="3"><path d="M107 568l21 -28 28 8 17 32 -59 6Z"/><path d="M1066 572l19 -16 28 13 8 23 -63 -2Z"/><path d="M1175 614l13 -17 32 -4 15 19 -9 16h-46Z"/></g>
+<!-- Fast, seamless scrolling Martian track: duplicated tiles pass underneath the bicycle. -->
+<defs>
+ <clipPath id="trackClip"><rect x="0" y="485" width="1280" height="235"/></clipPath>
+ <g id="trackTile">
+  <g opacity=".68" fill="#f4b27f" stroke="#ffdc9c" stroke-opacity=".26">
+   <path d="M16 591l23 -13 45 6 12 14 -21 7 -62 -3Z"/>
+   <path d="M211 644l20 -17 37 -3 19 20 -12 12 -58 -1Z"/>
+   <path d="M359 600l17 -8 48 8 7 11 -35 7 -39 -8Z"/>
+   <path d="M537 629l15 -20 34 -8 28 24 -11 14 -54 -2Z"/>
+   <path d="M741 587l17 -13 36 3 12 13 -29 10 -33 -4Z"/>
+   <path d="M891 647l21 -15 32 4 19 14 -17 9 -42 -2Z"/>
+  </g>
+  <g stroke="#ffcf9e" stroke-width="3.8" stroke-linecap="round" opacity=".68">
+   <path d="M104 622h69 M292 586h66 M461 663h86 M645 607h77 M825 633h69"/>
+  </g>
+  <g fill="#5c2b3b" stroke="#e7a075" stroke-opacity=".56" stroke-width="2">
+   <path d="M107 556l16 -22 27 4 12 21 -16 9 -37 -3Z"/>
+   <path d="M306 682l15 -21 30 -4 17 24 -13 12h-47Z"/>
+   <path d="M736 550l15 -14 26 6 10 18 -17 8 -32 -6Z"/>
+   <path d="M862 687l18 -24 32 -3 20 26 -15 11 -54 -2Z"/>
+  </g>
+  <g fill="#ffd9b4" opacity=".65">
+   <circle cx="179" cy="570" r="3"/><circle cx="487" cy="598" r="3"/><circle cx="665" cy="669" r="4"/><circle cx="840" cy="557" r="3"/>
+  </g>
+ </g>
+</defs>
+<g clip-path="url(#trackClip)">
+ <g>
+  <use xlink:href="#trackTile" x="-960"/><use xlink:href="#trackTile" x="0"/><use xlink:href="#trackTile" x="960"/><use xlink:href="#trackTile" x="1920"/>
+  <animateTransform attributeName="transform" type="translate" from="0 0" to="-960 0" dur="2.2s" repeatCount="indefinite"/>
+ </g>
+</g>
+<!-- cycler contact shadow -->
+<ellipse cx="646" cy="580" rx="284" ry="26" fill="#321d30" opacity=".42" filter="url(#blur)"/>
+<!-- bike: wheels at 460,565 and 835,565 -->
+<g filter="url(#shadow)">
+ <use xlink:href="#wheel" x="460" y="565"/><use xlink:href="#wheel" x="835" y="565"/>
+ <!-- rear mudguard -->
+ <path d="M366 562a94 94 0 0 1 170 -55" fill="none" stroke="#c3b6a9" stroke-width="8" stroke-linecap="round"/>
+ <path d="M752 523a94 94 0 0 1 170 38" fill="none" stroke="#b3c7c2" stroke-width="8" stroke-linecap="round"/>
+ <!-- frame geometry: rear(460,565), crank(651,565), seat junction(578,449), head(757,448) -->
+ <g stroke="url(#frame)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  <path d="M460 565L578 449 651 565 460 565M578 449L757 448 651 565M757 448L835 565"/>
+ </g>
+ <path d="M580 450l-10 -39" stroke="#c8dde2" stroke-width="11" stroke-linecap="round"/>
+ <path d="M529 409q48 -17 91 0-2 13 -16 15h-72q-14 -4 -3 -15" fill="#283847" stroke="#8eb8bd" stroke-width="3"/>
+ <path d="M758 449L739 388" stroke="#b6d9de" stroke-width="11" stroke-linecap="round"/>
+ <path d="M739 388q26 -15 52 3l7 19" fill="none" stroke="#bfece9" stroke-width="10" stroke-linecap="round"/><path d="M787 389l17 3" stroke="#213849" stroke-width="12" stroke-linecap="round"/>
+ <!-- chain to rear sprocket -->
+ <path d="M461 553L652 542Q674 546 674 565Q674 584 652 588L461 577Q443 575 443 565Q443 555 461 553Z" fill="none" stroke="#122e3e" stroke-width="8"/>
+ <path d="M461 553L652 542Q674 546 674 565Q674 584 652 588L461 577Q443 575 443 565Q443 555 461 553Z" fill="none" stroke="#bccdd0" stroke-width="2.5" stroke-dasharray="5 5" opacity=".75"/>
+ <circle cx="651" cy="565" r="31" fill="#284b57" stroke="#b7e8db" stroke-width="6"/><circle cx="651" cy="565" r="20" fill="#172e41" stroke="#84c1bb" stroke-width="2"/>
+ <g transform="translate(651 565)">
+  <g><animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="1.65s" repeatCount="indefinite"/><path d="M0 -44V44" stroke="#ddebdc" stroke-width="11" stroke-linecap="round"/><rect x="-20" y="-52" width="40" height="13" rx="5" fill="#273b4a" stroke="#a5d4d0" stroke-width="2"/><rect x="-20" y="37" width="40" height="13" rx="5" fill="#273b4a" stroke="#a5d4d0" stroke-width="2"/></g>
+  <circle r="9" fill="#e2efe6"/>
+ </g>
+ <!-- front lamp -->
+ <path d="M795 447l23 -1" stroke="#809fa8" stroke-width="8" stroke-linecap="round"/><circle cx="825" cy="445" r="15" fill="#f8ebbf" filter="url(#light)" opacity=".68"/><rect x="814" y="433" width="19" height="22" rx="6" fill="#edf2da" stroke="#8eb9ba" stroke-width="4"/><path d="M833 437l42 -17 -42 30Z" fill="#ffeab2" opacity=".18"/>
+ <!-- decorated rear pannier -->
+ <path d="M420 480h67l8 53h-86Z" fill="#ba665f" stroke="#f0aa83" stroke-width="5"/><path d="M431 484v47m39 -47v47" stroke="#eaa37f" stroke-width="3" opacity=".45"/><circle cx="449" cy="505" r="12" fill="#ffdf8c"/><path d="M444 505h10m-5 -5v10" stroke="#a95c4d" stroke-width="3"/>
+</g>
+<!-- near-leg and pelican sit above bicycle frame -->
+<g class="bob" filter="url(#shadow)">
+ <!-- distant back leg, foot follows opposite crank via smooth geometric motion -->
+ <path class="birdLeg birdLegBack" d="M561 428L608 488 651 609">
+  <animate attributeName="d" dur="1.65s" repeatCount="indefinite" values="M561 428L608 488 651 609;M561 428L609 500 695 565;M561 428L586 505 651 521;M561 428L580 482 607 565;M561 428L608 488 651 609"/>
+ </path>
+ <ellipse cx="653" cy="611" rx="22" ry="9" fill="#b87556"><animate attributeName="cx" dur="1.65s" repeatCount="indefinite" values="653;695;653;607;653"/><animate attributeName="cy" dur="1.65s" repeatCount="indefinite" values="611;568;523;568;611"/></ellipse>
+ <!-- pelican long tail -->
+ <path d="M492 390q-67 10 -87 -30 6 42 65 56Z" fill="#f3e2c5" stroke="#cfb79b" stroke-width="3"/>
+ <path d="M500 401q-59 25 -83 3 20 35 87 20Z" fill="#dbc2a6"/>
+ <!-- body -->
+ <path d="M502 346q13 -63 89 -63 82 0 108 64 7 66 -58 98 -64 33 -116 -9 -30 -25 -23 -90Z" fill="url(#bird)" stroke="#d4bfa6" stroke-width="3"/>
+ <path d="M509 374q27 57 98 57 43 -2 72 -33" fill="none" stroke="#fffefa" stroke-width="9" opacity=".42"/>
+ <!-- layered wing -->
+ <path d="M530 332q-55 4 -68 40 -13 38 35 63 65 30 132 -20 26 -24 12 -52 -34 -40 -111 -31Z" fill="url(#wing)" stroke="#bda88f" stroke-width="3"/>
+ <g stroke="#c4ac8d" stroke-width="3" opacity=".7" fill="none"><path d="M479 394q54 39 129 6"/><path d="M493 406q46 36 103 14"/><path d="M511 417q28 24 66 15"/></g>
+ <!-- neck rising to skull -->
+ <path d="M630 348q-8 -35 21 -69 22 -26 20 -74 -2 -23 18 -29 24 -5 31 18 14 64 -23 107 -12 15 -5 48 8 32 -25 44 -37 14 -46 -15Z" fill="url(#bird)" stroke="#d1b99c" stroke-width="3"/>
+ <!-- scarf tied around neck -->
+ <path d="M637 314q30 19 68 -2l9 20q-41 22 -79 1Z" fill="#65e8d9" stroke="#bafef1" stroke-width="2"/>
+ <g transform="translate(643 325)"><g class="tail"><path d="M0 0q-40 10 -86 5 -36 -6 -51 -18 48 7 67 -15 40 6 70 28Z" fill="#31bed0" stroke="#b2f8ea" stroke-width="2"/><path d="M-71 -17q-23 19 -45 19" stroke="#a9f6e7" stroke-width="3" fill="none"/></g></g>
+ <!-- head -->
+ <ellipse cx="708" cy="190" rx="58" ry="51" fill="url(#bird)" stroke="#d2bca7" stroke-width="3"/>
+ <!-- eyes -->
+ <ellipse cx="733" cy="183" rx="11" ry="12" fill="#fffef8"/><circle cx="736" cy="184" r="5.4" fill="#23313c"/><circle cx="738" cy="181" r="2" fill="#fff"/>
+ <path d="M721 169q9 -6 19 0" fill="none" stroke="#9c826e" stroke-width="3" stroke-linecap="round"/>
+ <ellipse cx="733" cy="183" rx="12" ry="0" fill="#f5e4cf"><animate attributeName="ry" values="0;0;0;12;0;0;0" keyTimes="0;.30;.47;.50;.53;.8;1" dur="4.4s" repeatCount="indefinite"/></ellipse>
+ <!-- pouch BEHIND bill -->
+ <path d="M751 204q48 5 114 8 14 1 22 15 -16 61 -83 55 -51 -4 -60 -39Z" fill="url(#pouch)" stroke="#b96d67" stroke-width="3"/>
+ <path d="M761 236q49 34 99 14" stroke="#ffcf9b" stroke-width="3" opacity=".63" fill="none"/>
+ <!-- majestic long beak -->
+ <path d="M746 202q54 -12 131 6 33 7 38 19 -37 9 -86 5l-83 -13Z" fill="url(#bill)" stroke="#c77e3f" stroke-width="3"/>
+ <path d="M753 207q60 -5 136 14" class="highlight" stroke-width="3"/>
+ <!-- astronaut helmet and headphone ring -->
+ <circle cx="710" cy="189" r="77" fill="url(#helmet)" stroke="#d5f7ff" stroke-width="5" stroke-opacity=".82"/>
+ <path d="M666 137q-24 26 -23 51" class="highlight" stroke-width="7"/><path d="M739 129q21 10 31 32" class="highlight" stroke-width="3"/>
+ <path d="M662 232q34 43 91 15" fill="none" stroke="#8dc6d3" stroke-width="6" opacity=".68"/>
+ <circle cx="661" cy="207" r="13" fill="#d7f1eb" stroke="#74bccb" stroke-width="5"/><circle cx="661" cy="207" r="4" fill="#ffbe7a"/>
+ <!-- near leg articulated with independently moving knee and foot -->
+ <path class="birdLeg" d="M591 426L632 489 651 521">
+  <animate attributeName="d" dur="1.65s" repeatCount="indefinite" values="M591 426L632 489 651 521;M591 426L624 496 607 565;M591 426L611 508 651 609;M591 426L639 494 695 565;M591 426L632 489 651 521"/>
+ </path>
+ <ellipse cx="651" cy="521" rx="24" ry="9" fill="#e6a16b" stroke="#a76c50" stroke-width="2"><animate attributeName="cx" dur="1.65s" repeatCount="indefinite" values="651;607;651;695;651"/><animate attributeName="cy" dur="1.65s" repeatCount="indefinite" values="521;565;609;565;521"/></ellipse>
+ <!-- forward wing arm touching handlebar -->
+ <path d="M633 362q47 3 77 29l80 -1" stroke="#c2a98c" stroke-width="20" fill="none" stroke-linecap="round"/>
+ <path d="M635 353q48 3 78 26l75 0" stroke="#f6e4c8" stroke-width="13" fill="none" stroke-linecap="round"/>
+ <ellipse cx="795" cy="390" rx="13" ry="9" fill="#ebbb7a" stroke="#ad8364" stroke-width="2"/>
+ <!-- tiny mission badge on wing -->
+ <circle cx="559" cy="372" r="17" fill="#2d6276" stroke="#d0f7e8" stroke-width="3"/><path d="M550 375l9 -16 9 16Z" fill="#ffcb92"/><circle cx="559" cy="377" r="3" fill="#fff2d6"/>
+</g>
+<!-- Foreground streaming pebbles, faster than the distant landscape. -->
+<g clip-path="url(#trackClip)">
+ <g opacity=".6">
+  <g id="nearTile" fill="none" stroke="#efad7d" stroke-width="5" stroke-linecap="round">
+   <path d="M30 706h102 M201 695h58 M342 706h126 M558 690h83 M712 707h129 M893 696h58"/>
+  </g>
+  <use xlink:href="#nearTile" x="-960"/><use xlink:href="#nearTile" x="960"/><use xlink:href="#nearTile" x="1920"/>
+  <animateTransform attributeName="transform" type="translate" from="0 0" to="-960 0" dur="1.45s" repeatCount="indefinite"/>
+ </g>
+</g>
+<!-- animated sand trail: above ground, below typography -->
+<g><use xlink:href="#dust" x="386" y="586" class="dust"/><use xlink:href="#dust" x="409" y="574" class="dust d2"/><use xlink:href="#dust" x="376" y="594" class="dust d3"/></g>
+<!-- typography -->
+<g transform="translate(67 76)"><path d="M0 0h45" stroke="#6ef3dd" stroke-width="4" stroke-linecap="round"/><text x="0" y="45" fill="#fff6e9" font-size="43" font-family="Georgia,serif" letter-spacing="1.4">MARS, ON TWO WHEELS</text><text x="2" y="75" fill="#e9bbb0" font-size="15" font-family="Arial,sans-serif" letter-spacing="5">THE GREAT PELICAN EXPEDITION</text></g>
+<g transform="translate(72 649)"><rect width="282" height="39" rx="19" fill="#1e263c" opacity=".75" stroke="#a1d7d2" stroke-opacity=".42"/><circle cx="22" cy="20" r="5" fill="#66ecc9"/><text x="39" y="25" fill="#f3e9df" font-size="15" font-family="Arial,sans-serif" letter-spacing="1.5">SOL 042 · CRUISE MODE</text></g>
+<text x="1206" y="675" text-anchor="end" fill="#f5d3bd" opacity=".68" font-size="13" font-family="Arial,sans-serif" letter-spacing="1.8">SCROLLING TERRAIN / SVG MOTION</text>
+</svg>

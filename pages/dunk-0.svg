@@ -1,0 +1,643 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <!-- Sunset Sky & Sun Gradients -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1446"/>
+      <stop offset="32%" stop-color="#5b2166"/>
+      <stop offset="62%" stop-color="#c24159"/>
+      <stop offset="84%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fde047"/>
+    </linearGradient>
+
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fffbeb" stop-opacity="0.95"/>
+      <stop offset="28%" stop-color="#fde047" stop-opacity="0.75"/>
+      <stop offset="60%" stop-color="#fb923c" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Court Asphalt Gradient -->
+    <linearGradient id="courtGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3f3244"/>
+      <stop offset="35%" stop-color="#2a2433"/>
+      <stop offset="100%" stop-color="#17141f"/>
+    </linearGradient>
+
+    <linearGradient id="courtSheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.04"/>
+      <stop offset="55%" stop-color="#fde047" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#fb923c" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <!-- Chain-Link Fence Pattern -->
+    <pattern id="fencePattern" width="14" height="14" patternUnits="userSpaceOnUse">
+      <path d="M0 7 L7 0 L14 7 L7 14 Z" fill="none" stroke="#1e1b2e" stroke-width="0.9" stroke-opacity="0.45"/>
+    </pattern>
+
+    <!-- Pelican Feather & Beak Gradients -->
+    <linearGradient id="featherWhite" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fffdf7"/>
+      <stop offset="65%" stop-color="#e9e4f0"/>
+      <stop offset="100%" stop-color="#c4bbd4"/>
+    </linearGradient>
+
+    <linearGradient id="featherBack" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d8d1e4"/>
+      <stop offset="100%" stop-color="#9e95b5"/>
+    </linearGradient>
+
+    <linearGradient id="beakGrad" x1="0" y1="0" x2="1" y2="0.4">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="55%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+
+    <linearGradient id="pouchGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fdba74"/>
+      <stop offset="55%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+
+    <!-- Jersey & Shorts Gradients -->
+    <linearGradient id="jerseyGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14b8a6"/>
+      <stop offset="55%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#115e59"/>
+    </linearGradient>
+
+    <linearGradient id="shortsGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#0c4a46"/>
+    </linearGradient>
+
+    <!-- Basketball Gradient -->
+    <radialGradient id="ballGrad" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#fdba74"/>
+      <stop offset="30%" stop-color="#f97316"/>
+      <stop offset="78%" stop-color="#c2410c"/>
+      <stop offset="100%" stop-color="#7c2d12"/>
+    </radialGradient>
+
+    <!-- Backboard Acrylic Gradient -->
+    <linearGradient id="boardGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#e2e8f0" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#94a3b8" stop-opacity="0.42"/>
+    </linearGradient>
+
+    <!-- Reusable Basketball Symbol -->
+    <g id="basketball-gfx">
+      <circle cx="0" cy="0" r="15" fill="url(#ballGrad)" stroke="#431407" stroke-width="1.4"/>
+      <path d="M-15 0 Q0 -4 15 0" fill="none" stroke="#431407" stroke-width="1.2"/>
+      <path d="M0 -15 Q4 0 0 15" fill="none" stroke="#431407" stroke-width="1.2"/>
+      <path d="M-10.5 -10.5 Q-3 0 -10.5 10.5" fill="none" stroke="#431407" stroke-width="1.1"/>
+      <path d="M10.5 -10.5 Q3 0 10.5 10.5" fill="none" stroke="#431407" stroke-width="1.1"/>
+      <ellipse cx="-5" cy="-5" rx="4" ry="2.2" transform="rotate(-35 -5 -5)" fill="#fff7ed" fill-opacity="0.45"/>
+    </g>
+  </defs>
+
+  <!-- ==================== 1. SKY & SUNSET ==================== -->
+  <rect x="0" y="0" width="800" height="365" fill="url(#skyGrad)"/>
+  <circle cx="465" cy="255" r="135" fill="url(#sunGlow)"/>
+  <circle cx="465" cy="255" r="46" fill="#fef08a" fill-opacity="0.9"/>
+
+  <!-- Soft Sunset Clouds -->
+  <g fill="#fda4af" fill-opacity="0.22">
+    <ellipse cx="150" cy="95" rx="95" ry="16"/>
+    <ellipse cx="210" cy="88" rx="60" ry="12"/>
+    <ellipse cx="610" cy="76" rx="110" ry="15"/>
+    <ellipse cx="380" cy="130" rx="75" ry="10"/>
+  </g>
+
+  <!-- ==================== 2. DISTANT CITY SKYLINE & PALMS ==================== -->
+  <g fill="#2b193d" fill-opacity="0.72">
+    <rect x="0" y="255" width="42" height="105"/>
+    <rect x="38" y="218" width="52" height="142"/>
+    <rect x="86" y="245" width="38" height="115"/>
+    <rect x="120" y="196" width="58" height="164"/>
+    <rect x="142" y="182" width="14" height="16"/>
+    <rect x="175" y="250" width="45" height="110"/>
+    <rect x="218" y="228" width="60" height="132"/>
+    <rect x="275" y="262" width="52" height="98"/>
+    <rect x="322" y="242" width="44" height="118"/>
+    <rect x="520" y="248" width="48" height="112"/>
+    <rect x="565" y="212" width="62" height="148"/>
+    <rect x="624" y="236" width="50" height="124"/>
+    <rect x="670" y="198" width="68" height="162"/>
+    <rect x="735" y="230" width="65" height="130"/>
+  </g>
+
+  <!-- Silhouette Palm Trees -->
+  <g fill="#1e132c" fill-opacity="0.85">
+    <path d="M98 355 Q104 295 112 252 L117 253 Q110 296 105 355 Z"/>
+    <path d="M114 252 Q92 238 72 248 Q95 247 114 256 Z"/>
+    <path d="M114 252 Q100 228 84 224 Q104 235 114 254 Z"/>
+    <path d="M114 252 Q132 228 152 232 Q134 238 116 255 Z"/>
+    <path d="M114 252 Q140 242 158 256 Q136 250 115 256 Z"/>
+    <path d="M114 252 Q120 264 132 276 Q120 268 112 256 Z"/>
+
+    <path d="M622 355 Q614 300 605 262 L600 263 Q608 302 614 355 Z"/>
+    <path d="M602 262 Q580 250 564 260 Q584 258 602 266 Z"/>
+    <path d="M602 262 Q590 238 574 236 Q592 246 602 264 Z"/>
+    <path d="M602 262 Q622 240 640 246 Q622 252 604 265 Z"/>
+    <path d="M602 262 Q628 254 644 268 Q624 262 603 266 Z"/>
+  </g>
+
+  <!-- ==================== 3. CHAIN-LINK FENCE ==================== -->
+  <rect x="0" y="250" width="800" height="110" fill="url(#fencePattern)"/>
+  <line x1="0" y1="250" x2="800" y2="250" stroke="#2d263d" stroke-width="3.5"/>
+  <g stroke="#2d263d" stroke-width="4">
+    <line x1="65" y1="250" x2="65" y2="360"/>
+    <line x1="235" y1="250" x2="235" y2="360"/>
+    <line x1="405" y1="250" x2="405" y2="360"/>
+    <line x1="575" y1="250" x2="575" y2="360"/>
+    <line x1="745" y1="250" x2="745" y2="360"/>
+  </g>
+
+  <!-- Concrete Curb -->
+  <rect x="0" y="356" width="800" height="10" fill="#52465c"/>
+  <rect x="0" y="364" width="800" height="4" fill="#2c2436"/>
+
+  <!-- ==================== 4. STREETBALL COURT ==================== -->
+  <rect x="0" y="368" width="800" height="132" fill="url(#courtGrad)"/>
+  <rect x="0" y="368" width="800" height="132" fill="url(#courtSheen)"/>
+
+  <!-- Painted Court Lines (Perspective) -->
+  <g stroke="#e2e8f0" stroke-opacity="0.34" stroke-width="3" fill="none">
+    <!-- Baseline -->
+    <line x1="0" y1="395" x2="800" y2="395"/>
+    <!-- Key / Paint Area -->
+    <polygon points="480,395 755,395 795,468 430,468" fill="#0f766e" fill-opacity="0.22" stroke="#facc15" stroke-opacity="0.45"/>
+    <!-- Free throw semicircle -->
+    <path d="M480 395 Q415 430 430 468"/>
+    <!-- Three-point arc -->
+    <path d="M265 395 Q185 450 235 500"/>
+    <!-- Center line hint -->
+    <line x1="65" y1="395" x2="20" y2="500"/>
+  </g>
+
+  <!-- ==================== 5. BASKETBALL HOOP (BACK LAYER) ==================== -->
+  <!-- Heavy Steel Stanchion & Support Arm -->
+  <g>
+    <rect x="726" y="136" width="16" height="278" rx="3" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+    <rect x="729" y="136" width="4" height="278" fill="#64748b" fill-opacity="0.45"/>
+    <!-- Base Concrete Block -->
+    <polygon points="714,414 756,414 762,424 708,424" fill="#475569" stroke="#1e293b" stroke-width="1.5"/>
+    <!-- Support Struts -->
+    <path d="M726 165 L694 152 L694 162 L726 177 Z" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
+    <path d="M726 218 L694 185 L694 195 L726 232 Z" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+  </g>
+
+  <!-- Backboard -->
+  <g>
+    <polygon points="688,108 702,116 702,212 688,204" fill="url(#boardGrad)" stroke="#cbd5e1" stroke-width="2.5"/>
+    <!-- Red Shooter's Square (Perspective) -->
+    <polygon points="691,152 699,156 699,190 691,186" fill="none" stroke="#ef4444" stroke-width="2"/>
+    <!-- Rim Mount Bracket -->
+    <rect x="676" y="182" width="14" height="10" rx="2" fill="#c2410c" stroke="#7c2d12" stroke-width="1.5"/>
+  </g>
+
+  <!-- Animated Rim & Net Group (Bends/Rattles on Slam!) -->
+  <g transform="translate(676, 186)">
+    <g id="hoop-flex">
+      <animateTransform attributeName="transform" type="rotate"
+        dur="3.6s" repeatCount="indefinite"
+        keyTimes="0; 0.53; 0.56; 0.60; 0.65; 0.72; 1"
+        values="0 0 0; 0 0 0; -13 0 0; 5 0 0; -3 0 0; 0 0 0; 0 0 0"
+        calcMode="spline"
+        keySplines="0 0 1 1; 0.1 0.8 0.2 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0 0 1 1"/>
+
+      <!-- Back Half of Rim -->
+      <ellipse cx="-34" cy="0" rx="28" ry="5.5" fill="none" stroke="#9a3412" stroke-width="4.5"/>
+
+      <!-- Net (Whips & Swishes on Dunk!) -->
+      <g stroke="#f8fafc" stroke-width="1.6" stroke-opacity="0.88" fill="none" stroke-linecap="round">
+        <path d="M-60 2 L-51 54 M-48 4 L-44 56 M-34 5 L-34 57 M-20 4 L-24 56 M-8 2 L-17 54">
+          <animate attributeName="d" dur="3.6s" repeatCount="indefinite"
+            keyTimes="0; 0.54; 0.58; 0.63; 0.70; 1"
+            values="
+              M-60 2 L-51 54 M-48 4 L-44 56 M-34 5 L-34 57 M-20 4 L-24 56 M-8 2 L-17 54;
+              M-60 2 L-51 54 M-48 4 L-44 56 M-34 5 L-34 57 M-20 4 L-24 56 M-8 2 L-17 54;
+              M-60 2 Q-66 28 -44 52 M-48 4 Q-52 30 -36 55 M-34 5 Q-32 32 -25 56 M-20 4 Q-12 28 -14 54 M-8 2 Q2 24 -6 50;
+              M-60 2 Q-46 28 -55 54 M-48 4 Q-38 30 -46 56 M-34 5 Q-28 30 -38 57 M-20 4 Q-16 28 -27 56 M-8 2 Q-6 26 -20 54;
+              M-60 2 L-51 54 M-48 4 L-44 56 M-34 5 L-34 57 M-20 4 L-24 56 M-8 2 L-17 54;
+              M-60 2 L-51 54 M-48 4 L-44 56 M-34 5 L-34 57 M-20 4 L-24 56 M-8 2 L-17 54"/>
+        </path>
+        <!-- Crosshatch Net Diamonds -->
+        <path d="M-57 16 L-45 30 L-34 18 L-23 30 L-11 16 M-54 36 L-44 48 L-34 38 L-24 48 L-14 36" stroke-opacity="0.72">
+          <animate attributeName="d" dur="3.6s" repeatCount="indefinite"
+            keyTimes="0; 0.54; 0.58; 0.63; 0.70; 1"
+            values="
+              M-57 16 L-45 30 L-34 18 L-23 30 L-11 16 M-54 36 L-44 48 L-34 38 L-24 48 L-14 36;
+              M-57 16 L-45 30 L-34 18 L-23 30 L-11 16 M-54 36 L-44 48 L-34 38 L-24 48 L-14 36;
+              M-61 18 L-44 33 L-30 20 L-14 33 L-3 18 M-52 38 L-38 50 L-26 39 L-14 50 L-6 36;
+              M-54 16 L-46 30 L-36 18 L-25 30 L-14 16 M-54 36 L-46 48 L-36 38 L-26 48 L-18 36;
+              M-57 16 L-45 30 L-34 18 L-23 30 L-11 16 M-54 36 L-44 48 L-34 38 L-24 48 L-14 36;
+              M-57 16 L-45 30 L-34 18 L-23 30 L-11 16 M-54 36 L-44 48 L-34 38 L-24 48 L-14 36"/>
+        </path>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== 6. DYNAMIC GROUND SHADOW ==================== -->
+  <ellipse cx="260" cy="428" rx="46" ry="9" fill="#09070f" fill-opacity="0.58">
+    <animate attributeName="cx" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+      values="260; 280; 315; 385; 495; 537; 560; 555; 420; 290; 260"
+      calcMode="spline"
+      keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+    <animate attributeName="rx" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+      values="46; 48; 52; 36; 22; 25; 36; 54; 38; 46; 46"/>
+    <animate attributeName="fill-opacity" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+      values="0.58; 0.62; 0.66; 0.38; 0.20; 0.24; 0.42; 0.68; 0.45; 0.58; 0.58"/>
+  </ellipse>
+
+  <!-- ==================== 7. COURT DUST PUFFS (TAKEOFF & LANDING) ==================== -->
+  <!-- Takeoff Dust at (315, 425) -->
+  <g fill="#e2e8f0" opacity="0">
+    <circle cx="305" cy="422" r="6">
+      <animate attributeName="cx" dur="3.6s" repeatCount="indefinite" keyTimes="0; 0.18; 0.30; 1" values="305; 305; 272; 272"/>
+      <animate attributeName="r" dur="3.6s" repeatCount="indefinite" keyTimes="0; 0.18; 0.30; 1" values="4; 5; 14; 4"/>
+    </circle>
+    <circle cx="326" cy="424" r="5">
+      <animate attributeName="cx" dur="3.6s" repeatCount="indefinite" keyTimes="0; 0.18; 0.30; 1" values="326; 326; 354; 354"/>
+      <animate attributeName="r" dur="3.6s" repeatCount="indefinite" keyTimes="0; 0.18; 0.30; 1" values="4; 5; 12; 4"/>
+    </circle>
+    <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.17; 0.20; 0.30; 1" values="0; 0; 0.48; 0; 0"/>
+  </g>
+
+  <!-- Landing Dust at (555, 425) -->
+  <g fill="#f8fafc" opacity="0">
+    <circle cx="540" cy="423" r="6">
+      <animate attributeName="cx" dur="3.6s" repeatCount="indefinite" keyTimes="0; 0.73; 0.84; 1" values="540; 540; 496; 496"/>
+      <animate attributeName="r" dur="3.6s" repeatCount="indefinite" keyTimes="0; 0.73; 0.84; 1" values="5; 6; 16; 5"/>
+    </circle>
+    <circle cx="570" cy="423" r="6">
+      <animate attributeName="cx" dur="3.6s" repeatCount="indefinite" keyTimes="0; 0.73; 0.84; 1" values="570; 570; 612; 612"/>
+      <animate attributeName="r" dur="3.6s" repeatCount="indefinite" keyTimes="0; 0.73; 0.84; 1" values="5; 6; 15; 5"/>
+    </circle>
+    <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.72; 0.75; 0.85; 1" values="0; 0; 0.55; 0; 0"/>
+  </g>
+
+  <!-- ==================== 8. INCOMING PASS BASKETBALL (t = 0.00 -> 0.10) ==================== -->
+  <g id="pass-ball" opacity="1">
+    <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.099; 0.10; 1" values="1; 1; 0; 0" calcMode="discrete"/>
+    <animateTransform attributeName="transform" type="translate" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.05; 0.10; 1"
+      values="-30 265; 170 250; 360 328; 360 328"
+      calcMode="spline"
+      keySplines="0.3 0.1 0.7 0.9; 0.3 0.1 0.8 0.9; 0 0 1 1"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.45s" repeatCount="indefinite"/>
+      <use href="#basketball-gfx"/>
+    </g>
+  </g>
+
+  <!-- ==================== 9. POST-DUNK BASKETBALL (t = 0.54 -> 0.92) ==================== -->
+  <g id="dunk-ball" opacity="0">
+    <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.539; 0.54; 0.919; 0.92; 1" values="0; 0; 1; 1; 0; 0" calcMode="discrete"/>
+    <animateTransform attributeName="transform" type="translate" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.54; 0.59; 0.68; 0.79; 0.92; 1"
+      values="642 183; 642 183; 645 256; 665 410; 742 308; 835 398; 835 398"
+      calcMode="spline"
+      keySplines="0 0 1 1; 0.4 0 0.8 1; 0.4 0 0.9 1; 0.15 0.75 0.35 1; 0.55 0 0.85 1; 0 0 1 1"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.4s" repeatCount="indefinite"/>
+      <use href="#basketball-gfx"/>
+    </g>
+  </g>
+
+  <!-- ==================== 10. MOTION TRAIL FOR TOMAHAWK WHIP ==================== -->
+  <path d="M492 78 Q568 62 638 158" fill="none" stroke="#fde047" stroke-width="10" stroke-linecap="round" stroke-opacity="0">
+    <animate attributeName="stroke-opacity" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.44; 0.52; 0.59; 1" values="0; 0; 0.45; 0; 0"/>
+  </path>
+  <path d="M510 96 Q576 84 635 168" fill="none" stroke="#fb923c" stroke-width="5" stroke-linecap="round" stroke-opacity="0">
+    <animate attributeName="stroke-opacity" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.45; 0.53; 0.60; 1" values="0; 0; 0.55; 0; 0"/>
+  </path>
+
+  <!-- ==================== 11. ANTHROPOMORPHIC PELICAN RIG (STRICT HIERARCHY) ==================== -->
+  <g id="pelican-root">
+    <!-- Root Pelvis World Translation -->
+    <animateTransform attributeName="transform" type="translate" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+      values="260 330; 280 342; 315 355; 385 270; 495 165; 537 200; 560 265; 555 355; 420 305; 290 336; 260 330"
+      calcMode="spline"
+      keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+
+    <g id="pelvis-rot">
+      <!-- Pelvis Rotation around (0,0) -->
+      <animateTransform attributeName="transform" type="rotate" dur="3.6s" repeatCount="indefinite"
+        keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+        values="4 0 0; 10 0 0; 16 0 0; -6 0 0; -18 0 0; 10 0 0; 4 0 0; 14 0 0; -6 0 0; 6 0 0; 4 0 0"
+        calcMode="spline"
+        keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+
+      <!-- ===== BACK LEG (LEFT) attached at Hip (-6, 8) ===== -->
+      <g transform="translate(-6, 8)">
+        <g id="thigh-L">
+          <animateTransform attributeName="transform" type="rotate" dur="3.6s" repeatCount="indefinite"
+            keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+            values="12 0 0; -10 0 0; -40 0 0; 26 0 0; 32 0 0; 10 0 0; -8 0 0; -36 0 0; 16 0 0; 4 0 0; 12 0 0"
+            calcMode="spline"
+            keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+          <!-- Back Shorts Leg -->
+          <path d="M-13 -4 L13 -4 L15 26 L-13 26 Z" fill="#0c4a46" stroke="#083330" stroke-width="1.5"/>
+          <!-- Back Bird Thigh -->
+          <path d="M-7 22 L7 22 L5 45 L-5 45 Z" fill="#d97706" stroke="#78350f" stroke-width="1.4"/>
+
+          <!-- Knee Joint L at (0, 44) — ALWAYS >= 0 (no reverse knee!) -->
+          <g transform="translate(0, 44)">
+            <g id="shin-L">
+              <animateTransform attributeName="transform" type="rotate" dur="3.6s" repeatCount="indefinite"
+                keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+                values="22 0 0; 56 0 0; 94 0 0; 12 0 0; 68 0 0; 45 0 0; 24 0 0; 86 0 0; 45 0 0; 32 0 0; 22 0 0"
+                calcMode="spline"
+                keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+              <!-- Back Shin + Athletic Sock -->
+              <path d="M-4.5 -2 L4.5 -2 L4 24 L-4 24 Z" fill="#d97706" stroke="#78350f" stroke-width="1.3"/>
+              <rect x="-5" y="22" width="10" height="20" rx="2" fill="#cbd5e1" stroke="#334155" stroke-width="1.3"/>
+              <line x1="-5" y1="27" x2="5" y2="27" stroke="#dc2626" stroke-width="2"/>
+
+              <!-- Ankle Joint L at (0, 42) -->
+              <g transform="translate(0, 42)">
+                <g id="foot-L">
+                  <animateTransform attributeName="transform" type="rotate" dur="3.6s" repeatCount="indefinite"
+                    keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+                    values="-38 0 0; -56 0 0; -70 0 0; 35 0 0; 30 0 0; 25 0 0; 12 0 0; -64 0 0; 20 0 0; -42 0 0; -38 0 0"
+                    calcMode="spline"
+                    keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+                  <!-- Back High-Top Sneaker -->
+                  <path d="M-8 -4 L8 -4 L16 2 Q22 4 21 9 L-9 9 Q-10 2 -8 -4 Z" fill="#991b1b" stroke="#450a0a" stroke-width="1.4"/>
+                  <path d="M-9 7 L21 7 L21 10 L-9 10 Z" fill="#e2e8f0"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+
+      <!-- ===== TORSO GROUP attached at Waist (0, -6) ===== -->
+      <g transform="translate(0, -6)">
+        <g id="torso">
+          <animateTransform attributeName="transform" type="rotate" dur="3.6s" repeatCount="indefinite"
+            keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+            values="10 0 0; 18 0 0; 24 0 0; 8 0 0; -14 0 0; 22 0 0; 14 0 0; 22 0 0; 6 0 0; 12 0 0; 10 0 0"
+            calcMode="spline"
+            keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+
+          <!-- ===== BACK WING-ARM (LEFT) attached at Shoulder (10, -56) ===== -->
+          <g transform="translate(10, -56)">
+            <g id="upper-arm-L">
+              <animateTransform attributeName="transform" type="rotate" dur="3.6s" repeatCount="indefinite"
+                keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+                values="-35 0 0; -50 0 0; 25 0 0; -80 0 0; -65 0 0; 35 0 0; 20 0 0; -45 0 0; -25 0 0; -38 0 0; -35 0 0"
+                calcMode="spline"
+                keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+              <!-- Back Upper Wing-Arm -->
+              <path d="M-8 -4 Q-11 18 -6 40 L6 40 Q10 18 7 -4 Z" fill="url(#featherBack)" stroke="#475569" stroke-width="1.4"/>
+              <path d="M-9 10 L-15 24 L-7 22 M-8 22 L-14 34 L-6 33" fill="#b4abc9" stroke="#475569" stroke-width="1.1"/>
+
+              <!-- Elbow Joint L at (0, 38) — ALWAYS <= 0 (no reverse elbow!) -->
+              <g transform="translate(0, 38)">
+                <g id="forearm-L">
+                  <animateTransform attributeName="transform" type="rotate" dur="3.6s" repeatCount="indefinite"
+                    keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+                    values="-65 0 0; -55 0 0; -50 0 0; -40 0 0; -35 0 0; -45 0 0; -40 0 0; -50 0 0; -70 0 0; -68 0 0; -65 0 0"
+                    calcMode="spline"
+                    keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+                  <!-- Back Forearm with Wing Feathers -->
+                  <path d="M-6 -2 L6 -2 L5 36 L-5 36 Z" fill="url(#featherBack)" stroke="#475569" stroke-width="1.3"/>
+                  <path d="M-5 8 L-16 20 L-5 19 M-5 19 L-15 30 L-5 29" fill="#c4bbd4" stroke="#475569" stroke-width="1.1"/>
+                  <!-- Feathered Left Hand -->
+                  <path d="M-5 34 L5 34 L9 44 L4 47 L1 42 L-2 48 L-6 42 Z" fill="#d8d1e4" stroke="#475569" stroke-width="1.2"/>
+                </g>
+              </g>
+            </g>
+          </g>
+
+          <!-- Tail Feathers attached to lower back -->
+          <path d="M-16 -2 L-38 -10 L-28 2 L-40 6 L-24 12 L-14 6 Z" fill="url(#featherWhite)" stroke="#475569" stroke-width="1.4"/>
+
+          <!-- Torso Body & Streetball Jersey -->
+          <path d="M-18 6 C-22 -24 -20 -52 -12 -68 L14 -68 C22 -50 22 -22 17 6 Z" fill="url(#jerseyGrad)" stroke="#064e3b" stroke-width="1.8"/>
+          <!-- Gold Jersey Trim & Side Stripe -->
+          <path d="M-11 -68 Q2 -54 13 -68" fill="none" stroke="#facc15" stroke-width="3"/>
+          <path d="M12 -52 L17 -4 L12 -4 L8 -52 Z" fill="#facc15" fill-opacity="0.85"/>
+          <path d="M-12 -32 L12 -32 L11 -24 L-11 -24 Z" fill="#facc15" fill-opacity="0.9"/>
+          <circle cx="0" cy="-42" r="5" fill="none" stroke="#facc15" stroke-width="2.2"/>
+
+          <!-- ===== NECK & PELICAN HEAD attached at (4, -68) ===== -->
+          <g transform="translate(4, -68)">
+            <g id="head">
+              <animateTransform attributeName="transform" type="rotate" dur="3.6s" repeatCount="indefinite"
+                keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+                values="-12 0 0; -15 0 0; -24 0 0; -10 0 0; 18 0 0; -18 0 0; -6 0 0; -18 0 0; -10 0 0; -14 0 0; -12 0 0"
+                calcMode="spline"
+                keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+
+              <!-- Swept-back Pelican Neck -->
+              <path d="M-9 6 C-12 -8 -10 -22 -4 -30 L10 -28 C12 -16 11 -4 9 6 Z" fill="url(#featherWhite)" stroke="#475569" stroke-width="1.5"/>
+
+              <!-- Headband Tails Fluttering Behind Head -->
+              <path d="M-12 -34 Q-28 -38 -38 -28 Q-26 -30 -12 -30 Z" fill="#dc2626" stroke="#7f1d1d" stroke-width="1">
+                <animate attributeName="d" dur="0.45s" repeatCount="indefinite"
+                  values="M-12 -34 Q-28 -38 -38 -28 Q-26 -30 -12 -30 Z;
+                          M-12 -34 Q-28 -28 -39 -36 Q-26 -24 -12 -30 Z;
+                          M-12 -34 Q-28 -38 -38 -28 Q-26 -30 -12 -30 Z"/>
+              </path>
+
+              <!-- Head Cranium & Crest Feathers -->
+              <path d="M-14 -32 C-16 -46 -4 -52 10 -48 C18 -45 20 -34 16 -24 L-6 -24 C-12 -24 -14 -28 -14 -32 Z" fill="url(#featherWhite)" stroke="#475569" stroke-width="1.5"/>
+              <!-- Spiky Crest Feathers -->
+              <path d="M-8 -46 L-18 -54 L-4 -49 L-12 -58 L2 -49" fill="url(#featherWhite)" stroke="#475569" stroke-width="1.3"/>
+
+              <!-- Iconic Pelican Gular Pouch (Lower Jaw) -->
+              <path d="M12 -28 L52 -24 C48 -8 24 -6 10 -18 Z" fill="url(#pouchGrad)" stroke="#9a3412" stroke-width="1.5"/>
+              <!-- Pouch Highlight -->
+              <path d="M18 -23 Q34 -14 44 -22" fill="none" stroke="#fed7aa" stroke-width="1.5" stroke-opacity="0.7"/>
+
+              <!-- Upper Pelican Beak with Hooked Tip -->
+              <path d="M13 -38 L55 -30 C58 -29 58 -24 54 -23 L51 -26 L12 -28 Z" fill="url(#beakGrad)" stroke="#9a3412" stroke-width="1.5"/>
+              <line x1="15" y1="-34" x2="50" y2="-28" stroke="#fef08a" stroke-width="1.4" stroke-opacity="0.65"/>
+
+              <!-- Red & Gold Streetball Headband -->
+              <path d="M-14 -37 Q2 -42 17 -37 L16 -31 Q2 -36 -14 -31 Z" fill="#dc2626" stroke="#7f1d1d" stroke-width="1.2"/>
+              <path d="M-14 -34 Q2 -39 17 -34" fill="none" stroke="#facc15" stroke-width="1.5"/>
+
+              <!-- Fierce Focused Eye & Brow -->
+              <ellipse cx="9" cy="-32" rx="4.2" ry="3.6" fill="#ffffff" stroke="#1e293b" stroke-width="1.2"/>
+              <circle cx="10.8" cy="-32" r="2" fill="#0f172a"/>
+              <circle cx="11.5" cy="-32.8" r="0.7" fill="#ffffff"/>
+              <!-- Determined Angled Brow -->
+              <path d="M4 -36 L15 -33" stroke="#1e293b" stroke-width="2.2" stroke-linecap="round"/>
+            </g>
+          </g>
+
+          <!-- ===== FRONT WING-ARM (RIGHT — DUNK ARM) attached at Shoulder (-6, -54) ===== -->
+          <g transform="translate(-6, -54)">
+            <g id="upper-arm-R">
+              <animateTransform attributeName="transform" type="rotate" dur="3.6s" repeatCount="indefinite"
+                keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+                values="-25 0 0; -40 0 0; -15 0 0; -115 0 0; -175 0 0; -84 0 0; -35 0 0; 15 0 0; -15 0 0; -28 0 0; -25 0 0"
+                calcMode="spline"
+                keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+              <!-- Shoulder Feather Cap & Upper Arm -->
+              <path d="M-9 -5 C-12 14 -9 30 -6 41 L7 41 C10 28 11 10 8 -5 Z" fill="url(#featherWhite)" stroke="#475569" stroke-width="1.5"/>
+              <!-- Wing-Arm Secondary Feathers -->
+              <path d="M-9 8 L-18 22 L-8 21 M-8 20 L-16 33 L-6 32" fill="#fffdf7" stroke="#475569" stroke-width="1.2"/>
+              <!-- Athletic Armband -->
+              <rect x="-8" y="14" width="16" height="6" rx="2" fill="#dc2626" stroke="#7f1d1d" stroke-width="1"/>
+
+              <!-- Elbow Joint R at (0, 40) — ALWAYS <= 0 (no reverse elbow!) -->
+              <g transform="translate(0, 40)">
+                <g id="forearm-R">
+                  <animateTransform attributeName="transform" type="rotate" dur="3.6s" repeatCount="indefinite"
+                    keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+                    values="-70 0 0; -65 0 0; -85 0 0; -50 0 0; -58 0 0; -14 0 0; -20 0 0; -55 0 0; -75 0 0; -72 0 0; -70 0 0"
+                    calcMode="spline"
+                    keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+                  <!-- Forearm + Primary Wing Feathers -->
+                  <path d="M-6.5 -2 L6.5 -2 L5.5 38 L-5.5 38 Z" fill="url(#featherWhite)" stroke="#475569" stroke-width="1.4"/>
+                  <path d="M-6 6 L-19 19 L-6 18 M-6 17 L-18 29 L-5 28 M-5 27 L-14 37 L-5 36" fill="#fffdf7" stroke="#475569" stroke-width="1.2"/>
+                  <!-- Gold Wristband -->
+                  <rect x="-6" y="29" width="12" height="6" rx="1.5" fill="#facc15" stroke="#a16207" stroke-width="1"/>
+
+                  <!-- Wrist / Hand Joint R at (0, 38) -->
+                  <g transform="translate(0, 38)">
+                    <g id="hand-R">
+                      <animateTransform attributeName="transform" type="rotate" dur="3.6s" repeatCount="indefinite"
+                        keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+                        values="10 0 0; 0 0 0; 15 0 0; 0 0 0; -10 0 0; 0 0 0; 10 0 0; 0 0 0; 0 0 0; 8 0 0; 10 0 0"
+                        calcMode="spline"
+                        keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+
+                      <!-- === HELD BASKETBALL NESTED DIRECTLY IN RIGHT HAND (t = 0.10 -> 0.54) === -->
+                      <g id="held-ball" transform="translate(8, 12)" opacity="0">
+                        <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+                          keyTimes="0; 0.099; 0.10; 0.539; 0.54; 1" values="0; 0; 1; 1; 0; 0" calcMode="discrete"/>
+                        <use href="#basketball-gfx"/>
+                      </g>
+
+                      <!-- Feathered Right Hand Wrapping Around Ball -->
+                      <path d="M-5 -1 L5 -1 L11 8 L7 13 L3 7 L2 14 L-3 12 L-6 6 Z" fill="url(#featherWhite)" stroke="#475569" stroke-width="1.3"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+
+      <!-- Pelvis / Waistband of Basketball Shorts -->
+      <path d="M-19 -6 L19 -6 L21 12 L-21 12 Z" fill="url(#shortsGrad)" stroke="#064e3b" stroke-width="1.6"/>
+      <rect x="-19" y="-6" width="38" height="5" rx="2" fill="#facc15" stroke="#854d0e" stroke-width="1"/>
+
+      <!-- ===== FRONT LEG (RIGHT) attached at Hip (6, 8) ===== -->
+      <g transform="translate(6, 8)">
+        <g id="thigh-R">
+          <animateTransform attributeName="transform" type="rotate" dur="3.6s" repeatCount="indefinite"
+            keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+            values="-26 0 0; -44 0 0; -62 0 0; -48 0 0; -55 0 0; -35 0 0; -22 0 0; -58 0 0; -30 0 0; -32 0 0; -26 0 0"
+            calcMode="spline"
+            keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+          <!-- Front Shorts Leg with Gold Trim -->
+          <path d="M-14 -4 L14 -4 L16 27 L-14 27 Z" fill="url(#shortsGrad)" stroke="#064e3b" stroke-width="1.6"/>
+          <path d="M-14 23 L16 23 L16 27 L-14 27 Z" fill="#facc15"/>
+          <line x1="9" y1="-2" x2="11" y2="23" stroke="#facc15" stroke-width="2.5"/>
+          <!-- Front Bird Thigh -->
+          <path d="M-7 25 L7 25 L5 45 L-5 45 Z" fill="#f59e0b" stroke="#92400e" stroke-width="1.4"/>
+
+          <!-- Knee Joint R at (0, 44) — ALWAYS >= 0 (no reverse knee!) -->
+          <g transform="translate(0, 44)">
+            <g id="shin-R">
+              <animateTransform attributeName="transform" type="rotate" dur="3.6s" repeatCount="indefinite"
+                keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+                values="48 0 0; 78 0 0; 104 0 0; 82 0 0; 95 0 0; 65 0 0; 32 0 0; 98 0 0; 65 0 0; 58 0 0; 48 0 0"
+                calcMode="spline"
+                keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+              <!-- Front Shin + High Athletic Sock -->
+              <path d="M-4.5 -2 L4.5 -2 L4 23 L-4 23 Z" fill="#f59e0b" stroke="#92400e" stroke-width="1.3"/>
+              <rect x="-5.2" y="21" width="10.4" height="21" rx="2" fill="#f8fafc" stroke="#334155" stroke-width="1.3"/>
+              <line x1="-5" y1="26" x2="5" y2="26" stroke="#dc2626" stroke-width="2.2"/>
+              <line x1="-5" y1="30" x2="5" y2="30" stroke="#facc15" stroke-width="1.8"/>
+
+              <!-- Ankle Joint R at (0, 42) -->
+              <g transform="translate(0, 42)">
+                <g id="foot-R">
+                  <animateTransform attributeName="transform" type="rotate" dur="3.6s" repeatCount="indefinite"
+                    keyTimes="0; 0.10; 0.18; 0.28; 0.42; 0.54; 0.64; 0.74; 0.84; 0.94; 1"
+                    values="-26 0 0; -44 0 0; -58 0 0; 15 0 0; 25 0 0; 20 0 0; 10 0 0; -54 0 0; 15 0 0; -32 0 0; -26 0 0"
+                    calcMode="spline"
+                    keySplines="0.25 0.1 0.25 1; 0.4 0 0.6 1; 0.1 0.8 0.3 1; 0.15 0.7 0.4 1; 0.6 0 0.9 0.2; 0.4 0 0.8 1; 0.2 0.8 0.4 1; 0.2 0.7 0.3 1; 0.5 0 0.5 1; 0.3 0 0.7 1"/>
+                  <!-- Front High-Top Streetball Sneaker -->
+                  <path d="M-8 -4 L8 -4 L17 2 Q23 4 22 9 L-9 9 Q-11 2 -8 -4 Z" fill="#dc2626" stroke="#7f1d1d" stroke-width="1.4"/>
+                  <!-- Gold Swoosh / Accent -->
+                  <path d="M-4 4 Q6 5 15 2" fill="none" stroke="#facc15" stroke-width="2.2" stroke-linecap="round"/>
+                  <!-- White Rubber Sole -->
+                  <path d="M-9 7 L22 7 L22 10 L-9 10 Z" fill="#f8fafc" stroke="#334155" stroke-width="0.9"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== 12. FRONT RIM OVERLAY (SO BALL PASSES INSIDE RIM!) ==================== -->
+  <g transform="translate(676, 186)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        dur="3.6s" repeatCount="indefinite"
+        keyTimes="0; 0.53; 0.56; 0.60; 0.65; 0.72; 1"
+        values="0 0 0; 0 0 0; -13 0 0; 5 0 0; -3 0 0; 0 0 0; 0 0 0"
+        calcMode="spline"
+        keySplines="0 0 1 1; 0.1 0.8 0.2 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0 0 1 1"/>
+      <!-- Front Half of Orange Rim -->
+      <path d="M-62 0 A28 5.5 0 0 0 -6 0" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+      <path d="M-58 1 A24 4.2 0 0 0 -10 1" fill="none" stroke="#fdba74" stroke-width="1.4" stroke-opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- ==================== 13. DUNK IMPACT SHOCKWAVE & SPARKS ==================== -->
+  <g transform="translate(642, 185)" opacity="0">
+    <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.535; 0.54; 0.65; 1" values="0; 0; 1; 0; 0"/>
+    <!-- Expanding Shockwave Ring -->
+    <circle cx="0" cy="0" r="10" fill="none" stroke="#fef08a" stroke-width="4">
+      <animate attributeName="r" dur="3.6s" repeatCount="indefinite"
+        keyTimes="0; 0.54; 0.65; 1" values="10; 10; 64; 64"/>
+      <animate attributeName="stroke-width" dur="3.6s" repeatCount="indefinite"
+        keyTimes="0; 0.54; 0.65; 1" values="5; 5; 0.5; 0.5"/>
+    </circle>
+    <!-- Impact Burst Rays -->
+    <g stroke="#fb923c" stroke-width="3" stroke-linecap="round">
+      <line x1="-22" y1="-16" x2="-46" y2="-34"/>
+      <line x1="20" y1="-22" x2="38" y2="-44"/>
+      <line x1="-26" y1="8" x2="-52" y2="16"/>
+      <line x1="24" y1="10" x2="46" y2="22"/>
+      <line x1="0" y1="-24" x2="0" y2="-50"/>
+      <animateTransform attributeName="transform" type="scale" dur="3.6s" repeatCount="indefinite"
+        keyTimes="0; 0.54; 0.65; 1" values="0.4; 0.4; 1.35; 1.35"/>
+    </g>
+  </g>
+
+  <!-- Court Bounce Ripple at (665, 424) -->
+  <ellipse cx="665" cy="424" rx="8" ry="2.5" fill="none" stroke="#fdba74" stroke-width="2" opacity="0">
+    <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.67; 0.68; 0.77; 1" values="0; 0; 0.75; 0; 0"/>
+    <animate attributeName="rx" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.68; 0.77; 1" values="8; 8; 34; 34"/>
+    <animate attributeName="ry" dur="3.6s" repeatCount="indefinite"
+      keyTimes="0; 0.68; 0.77; 1" values="2.5; 2.5; 8; 8"/>
+  </ellipse>
+</svg>

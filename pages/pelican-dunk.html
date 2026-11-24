@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>鹈鹕扣篮 · Nan 的 AI 实验</title>
+<meta property="og:title" content="鹈鹕扣篮 · Nan 的 AI 实验">
+<meta property="og:description" content="同一道扣篮题，切换 Gemini 和 Qwen 看动作。">
+<meta property="og:image" content="https://nan-works-atlas.feysheep4.chatgpt.site/pelican-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{box-sizing:border-box}html{color-scheme:dark;background:#05060a;color:#eff0f4;font:16px/1.6 system-ui,sans-serif}
+body{max-width:900px;margin:auto;padding:clamp(16px,4vw,52px)}
+a{color:#b7bfcd;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+h1{font-size:clamp(28px,5vw,48px);line-height:1.2;font-weight:450;margin:clamp(24px,6vh,64px) 0 20px}
+iframe{border:0;pointer-events:none;display:block;width:100%;aspect-ratio:8/5;height:auto;object-fit:contain;background:#15111c}
+fieldset{margin:14px 0;padding:0;border:0;display:flex;gap:18px;flex-wrap:wrap}
+label{position:relative;cursor:pointer}input[type="radio"]{position:absolute;opacity:0}
+span{display:inline-flex;align-items:center;min-height:44px;color:#a6acb8;border-bottom:1px solid transparent}
+input:checked+span{color:white;border-color:#cdd2da}
+input:focus-visible+span{outline:2px solid white;outline-offset:3px}
+.controls{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0 16px}
+button{background:none;color:#bdc2cb;border:0;font:inherit;min-height:44px;cursor:pointer;padding:0 6px}
+button:disabled{opacity:.4}
+#seek{display:block;width:100%;height:36px;margin:0;accent-color:#bcc5d6;cursor:pointer}
+</style>
+</head>
+<body>
+<a href="/#works">← 作品</a><main><h1>鹈鹕扣篮</h1>
+<iframe id="scene" title="Gemini Neon 生成的鹈鹕扣篮动画" sandbox="allow-same-origin" tabindex="-1"></iframe>
+<input id="seek" type="range" aria-label="动画进度" min="0" max="100" step="0.1" value="0" disabled>
+<div class="controls">
+<fieldset aria-label="选择模型">
+<label><input type="radio" name="model" value="0" checked><span>Gemini Neon</span></label>
+<label><input type="radio" name="model" value="1"><span>Qwen 4 Max</span></label>
+</fieldset><button id="play" type="button" disabled>暂停</button></div><button id="copy" type="button" hidden>复制此刻链接</button>
+<small id="notice" role="status"></small>
+<input id="manual" hidden readonly aria-label="此刻链接" style="width:100%">
+</main>
+<script>
+const models = ['Gemini Neon', 'Qwen 4 Max'];
+const scene = document.getElementById('scene');
+const play = document.getElementById('play');
+const seek = document.getElementById('seek');
+const periods = [3.6, 4];
+let active = -1;
+let progress = 0;
+let paused = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let animation = null;
+
+const copy = document.getElementById('copy');
+const notice = document.getElementById('notice');
+const manual = document.getElementById('manual');
+const modelKeys = ['gemini', 'qwen'];
+const params = new URLSearchParams(location.search);
+const sharedModel = modelKeys.indexOf(params.get('model'));
+const percent = params.get('at');
+if (sharedModel >= 0 && percent !== null && percent.trim() !== '' && Number.isFinite(Number(percent)) && Number(percent) >= 0 && Number(percent) <= 100) {
+  document.querySelectorAll('input[name=model]')[sharedModel].checked = true;
+  progress = Number(percent) / 100;
+  paused = true;
+}
+function updateShare() {
+  copy.hidden = !paused || !animation;
+  notice.textContent = '';
+  manual.hidden = true;
+}
+copy.addEventListener('click', async () => {
+  const link = new URL(location.pathname, location.origin);
+  link.searchParams.set('model', modelKeys[active]);
+  link.searchParams.set('at', String(Math.round(progress * 1000) / 10));
+  try {
+    await navigator.clipboard.writeText(link.href);
+    notice.textContent = '已复制';
+  } catch {
+    manual.value = link.href;
+    manual.hidden = false;
+    manual.select();
+    notice.textContent = '可长按复制链接';
+  }
+});
+function showModel() {
+  const selected = Number(document.querySelector('input[name=model]:checked').value);
+  if (selected === active) return;
+  if (animation && !paused) progress = (animation.getCurrentTime() % periods[active]) / periods[active];
+  active = selected;
+  animation = null;
+  updateShare();
+  play.disabled = seek.disabled = true;
+  scene.title = models[selected] + ' 生成的鹈鹕扣篮动画';
+  scene.src = 'dunk-' + selected + '.svg';
+}
+scene.addEventListener('load', () => {
+  const doc = scene.contentDocument;
+  if (!doc || doc.URL !== scene.src || doc.documentElement.localName !== 'svg') return;
+  animation = doc.documentElement;
+  animation.style.width = '100%';
+  animation.style.height = '100%';
+  animation.style.display = 'block';
+  animation.setCurrentTime(Math.min(progress, .99999) * periods[active]);
+  if (paused) animation.pauseAnimations();
+  play.disabled = seek.disabled = false;
+  seek.value = progress * 100;
+  updateShare();
+});
+play.textContent = paused ? '播放' : '暂停';
+play.addEventListener('click', () => {
+  if (!animation) return;
+  paused = !paused;
+  if (paused) {
+    animation.pauseAnimations();
+    progress = (animation.getCurrentTime() % periods[active]) / periods[active];
+    seek.value = progress * 100;
+  }
+  else animation.unpauseAnimations();
+  updateShare();
+  play.textContent = paused ? '播放' : '暂停';
+});
+seek.addEventListener('input', () => {
+  if (!animation) return;
+  paused = true;
+  animation.pauseAnimations();
+  play.textContent = '播放';
+  progress = seek.valueAsNumber / 100;
+  updateShare();
+  animation.setCurrentTime(Math.min(progress, .99999) * periods[active]);
+});
+function updateProgress() {
+  if (animation && !paused) seek.value = 100 * (animation.getCurrentTime() % periods[active]) / periods[active];
+}
+setInterval(updateProgress, 80);
+document.querySelector('fieldset').addEventListener('change', showModel);
+window.addEventListener('pageshow', showModel);
+showModel();
+</script>
+</body></html>
